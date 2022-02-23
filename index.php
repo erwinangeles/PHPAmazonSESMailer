@@ -108,7 +108,7 @@ $subject = 'Website Contact Request from ' . $_POST['firstname'] . ' ' . $_POST[
 
 // The plain-text body of the email
 $bodyText =  "New Contact Request\r\n" .
-"Name: ". $_POST['firstName'] . " " . $_POST['lastname'] . "\r\n".
+"Name: ". $_POST['firstname'] . " " . $_POST['lastname'] . "\r\n".
 "Title: ". $_POST['title'] . "\r\n".
 "Company: ". $_POST['companyname'] . "\r\n".
 "Email: ". $_POST['email'] . "\r\n".
@@ -118,7 +118,7 @@ $bodyText =  "New Contact Request\r\n" .
 
 // The HTML-formatted body of the email
 $bodyHtml = '<h1>Contact Request</h1>' .
-    '<p>Name: '. $_POST['firstName'] . ' ' . $_POST['lastname'] . '</p>' .
+    '<p>Name: '. $_POST['firstname'] . ' ' . $_POST['lastname'] . '</p>' .
     '<p>Title: '. $_POST['title'] . '</p>' .
     '<p>Company: ' . $_POST['companyname'] . '</p>' .
     '<p>Email: ' . $_POST['email'] . '</p>' .
@@ -130,7 +130,7 @@ $mail = new PHPMailer(true);
 try {
     // Specify the SMTP settings.
     $mail->isSMTP();
-    $mail->addReplyTo($_POST['email'], $_POST['firstName'] . ' ' . $_POST['lastname']);
+    $mail->addReplyTo($_POST['email'], $_POST['firstname'] . ' ' . $_POST['lastname']);
     $mail->setFrom($sender, $senderName);
     $mail->Username   = $usernameSmtp;
     $mail->Password   = $passwordSmtp;
