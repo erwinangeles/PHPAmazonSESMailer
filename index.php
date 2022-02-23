@@ -123,7 +123,7 @@ $bodyHtml = '<h1>Contact Request</h1>' .
     '<p>Company: ' . $_POST['companyname'] . '</p>' .
     '<p>Email: ' . $_POST['email'] . '</p>' .
     '<p>Phone: ' . $_POST['phonenumber'] . '</p>' .
-    '<p>Message: ' . $_POST['message'] . '</p>' .
+    '<p>Message: ' . $_POST['message'] . '</p>';
 
 $mail = new PHPMailer(true);
 
