@@ -26,14 +26,12 @@ $dotenv->load();
 $validation = $validator->make($_POST, [
     'firstname'                  => 'required|min:4|max:30',
     'lastname'                  => 'required|min:4|max:30',
-    'title'                  => 'required|min:3|max:50',
+    'title'                  => 'required|min:1|max:50',
     'companyname'                  => 'required|min:3|max:50',
     'email'                 => 'required|email|max:50',
     'phonenumber'                 => 'required|min:10|max:20',
     'message'                  => 'required|min:4|max:1000',
 ]);
-
-
 
 //google Recaptcha
 $recaptcha = $_POST['g-recaptcha-response'];
