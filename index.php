@@ -142,7 +142,9 @@ try {
 
     // Specify the message recipients.
     $mail->addAddress($recipient);
-    $mail->addBCC($recipient_bcc);
+    if($recipient_bcc){
+        $mail->addBCC($recipient_bcc);
+    }
     // You can also add CC, BCC, and additional To recipients here.
 
     // Specify the content of the message.
